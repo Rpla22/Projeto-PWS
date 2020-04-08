@@ -1,5 +1,5 @@
 # IPL - Escola Superior de Tecnologia e Gestão
-## Projeto-Programação Web Servidor
+## Projeto-Programação Web Servidor.
 
 ## Autores
 - Marcos Ferreira
