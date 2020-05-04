@@ -1,0 +1,57 @@
+<?php
+use ArmoredCore\WebObjects\Data;
+use ArmoredCore\WebObjects\ErrMgr;
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+?>
+<?php $user = Data::get('user')?>
+<?php ErrMgr::attach($user) ?>
+
+<?php Layout::includeLayout('header') ?>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 side-bar" style="padding-top: 20vh;font-size: 20px;" >
+            <div class="row text-center" style="padding: 4vh;">
+                <form method="post" action="<?=Url::toRoute('user/store')?>">
+                    <div class="form-group" >
+                        <label for="username">Username</label>
+                        <input type="text" value="<?=$user->username?>"class="form-control" id="username"  placeholder="Username" name="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="Password">Password</label>
+                        <input type="password" value="<?=$user->password?>"class="form-control" id="Password" placeholder="Password" name="password">
+                        <?= ErrMgr::bind('password') ?>
+                    </div>
+                    <div class="form-group">
+                        <label for="secondPassword">Re-enter Password</label>
+                        <input type="password" class="form-control" id="secondPassword" placeholder="Re-enter Password" name="secondPassword">
+                    </div>
+                    <div class="form-group" >
+                        <label for="dataNasc">Data de Nascimento</label>
+                        <input type="date" value="<?=$user->data_nasc?>" class="form-control" id="dataNasc" name="data_nasc">
+                    </div>
+                    <div class="form-group" >
+                        <label for="email">Email</label>
+                        <input type="email" value="<?=$user->email?>" class="form-control" id="email"  placeholder="Email" name="email">
+
+                    </div>
+                    <button type="submit" class="btn">Registar</button>
+                </form>
+
+                <div class="row" style="padding-top: 5vh;">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= URL::toRoute('home/index')?>"> Voltar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 cube-body">
+            <?php Layout::includeLayout('cube') ?>
+
+        </div>
+    </div>
+</div>

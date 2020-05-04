@@ -1,0 +1,9 @@
+
+.login-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 50vw;
+    border: black 1px solid;
+}

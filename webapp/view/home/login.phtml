@@ -1,0 +1,42 @@
+<?php
+use ArmoredCore\WebObjects\Data;
+use ArmoredCore\WebObjects\ErrMgr;
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+
+Layout::includeLayout('header') ?>
+
+<?php $user = Data::get('user')?>
+<?php ErrMgr::attach($user) ?>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 side-bar" style="padding-top: 32vh;font-size: 20px;" >
+            <div class="row text-center" style="padding: 4vh;">
+                <form method="post" action="<?= URL::toRoute('home/login')?>">
+                    <div class="form-group" >
+                        <label for="exampleInputEmail1">Username</label>
+                        <input type="text" value="<?=$user->username?>" class="form-control" id="username" name="username" placeholder="Enter Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" value="<?=$user->password?>" class="form-control" id="password" placeholder="Password" name="password">
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+
+                <div class="row" style="padding-top: 5vh;">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= URL::toRoute('home/index')?>"> Voltar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 cube-body">
+            <?php Layout::includeLayout('cube') ?>
+
+        </div>
+    </div>
+</div>

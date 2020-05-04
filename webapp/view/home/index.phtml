@@ -1,0 +1,87 @@
+<?php
+use ArmoredCore\WebObjects\Asset;
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\Facades\AssetBundler;
+use ArmoredCore\WebObjects\URL;
+use Armoredcore\WebObjects\Session;
+use ArmoredCore\WebObjects\Data;
+use ArmoredCore\WebObjects\ErrMgr;
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author"      content="Silvio Priem Mendes, PhD">
+
+    <title>Weblogic MVC</title>
+
+    <?=AssetBundler::css()?>
+
+    <link rel="shortcut icon" href="<?= Asset::image('gt_favicon.png')?>">
+    <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <!-- Custom styles for our site template -->
+    <link rel="stylesheet" href="<?= Asset::css('/bootstrap-theme.css')?>" media="screen" >
+    <link rel="stylesheet" href="<?= Asset::css('/cube/cube-style.css')?>" media="screen" >
+    <link rel="stylesheet" href="<?= Asset::css('/layout/side-bar.css')?>" media="screen" >
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="<?= Asset::js('html5shiv.js')?>"></script>
+    <script src="<?= Asset::js('respond.min.js')?>"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-md-4 side-bar " style="padding-top: 25vh;font-size: 25px;">
+            <div class="row">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <?php if(Session::has("user")){
+                            echo strtoupper(Session::get("user")->username);
+                        }
+                        ?>
+                    </li>
+                </ul>
+            </div>
+            <div class="row" style="padding-top: 10vh;">
+                <ul class="nav">
+                    <li class="nav-item">
+
+                        <?php if(Session::has("user")){
+                            echo '<a class="nav-link active" href="'. URL::toRoute('home/logout') .'">Log out</a>';
+                        }else{
+                            echo '<a class="nav-link active" href="'. URL::toRoute('home/login') . '">Login</a>';
+                        }
+                        ?>
+                    </li>
+                    <li class="nav-item">
+                        <?php if(Session::has("user")){
+                            echo '<a class="nav-link active" href="'. URL::toRoute('home/game') .'">Jogo Normal</a>';
+                        }else{
+                            echo '<a class="nav-link active" href="'. URL::toRoute('home/register') . '">Registar</a>';
+                        }
+                        ?>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="<?= URL::toRoute("home/leaderboard")?>">Leaderboard</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-8 cube-body">
+                <?php Layout::includeLayout('cube') ?>
+
+        </div>
+    </div>
+</div>
+
+
+</body>
