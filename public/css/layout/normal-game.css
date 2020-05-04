@@ -1,0 +1,34 @@
+.number{
+    background: none;
+    height: 50%;
+    border:0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+.number:hover{
+    color:white;
+}
+
+.number::before{
+    content:"";
+    position: absolute;
+    left:0;
+    width: 100%;
+    height: 0;
+    background: #3d8fd1;
+    z-index: -1;
+    transition: 0.4s;
+    bottom: 0;
+    border-radius: 50% 50% 0 0 ;
+}
+.number:hover::before {
+    height: 100%;
+    box-shadow: 5px 5px 5px #28aef9;
+    border-radius:0;
+}

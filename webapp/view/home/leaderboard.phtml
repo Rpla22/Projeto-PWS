@@ -1,0 +1,31 @@
+<?php
+
+use ArmoredCore\WebObjects\Layout;
+
+;
+
+use ArmoredCore\WebObjects\URL;
+
+Layout::includeLayout('header') ?>
+<div class="container-fluid">
+    <div class="row">
+
+
+        <div class="col-md-3 side-bar-ingame">
+            <div class="row text-center nav-side-bar-ingame">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Novo Jogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= URL::toRoute('home/index') ?>"">Voltar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9 ">
+        </div>
+    </div>
+
+</div>
+
