@@ -9,20 +9,24 @@
 class User extends \ActiveRecord\Model
 {
 
-    protected $fillable = array('username', 'password', 'data_nasc','email');
+    protected $fillable = array('primeiro','apelido','username', 'password', 'data_nasc','email');
 
     static $validates_presence_of = array(
-        array('username'),
-        array('password','message' => 'As passwords nao correspondem'),
+        array('primeiro'),
+        array('apelido'),
+        array('username','message' => 'Erro no Registo'),
+        array('password','message' => 'Erro no Login'),
         array('data_nasc'),
-        array('email')
+        array('email'),
     );
 
 
     public function rules()
     {
         return [
-            'username' => 'required|unique:posts|max:255',
+            'primeiro' => 'required',
+            'apelido' => 'required',
+            'username' => 'required',
             'password' => 'required',
             'data_nasc' => 'required',
             'email' => 'required|email',

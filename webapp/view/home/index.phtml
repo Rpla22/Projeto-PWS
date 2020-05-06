@@ -43,7 +43,7 @@ use ArmoredCore\WebObjects\ErrMgr;
                 <ul class="nav">
                     <li class="nav-item">
                         <?php if(Session::has("user")){
-                            echo strtoupper(Session::get("user")->username);
+                            echo '<a class="nav-link active" href="'. URL::toRoute('home/perfil') .'">' .strtoupper(Session::get("user")->username) . '</a>';
                         }
                         ?>
                     </li>
