@@ -21,24 +21,39 @@ class UserController extends BaseController implements ResourceControllerInterfa
     {
         // create new resource (activerecord/model) instance
         // your form name fields must match the ones of the table fields
+        // buscar os dados do POST
         $user = new User();
+        $user->primeiro= Post::get('primeiro');
+        $user->apelido= Post::get('apelido');
         $user->username = Post::get('username');
         $user->password = Post::get('password');
         $user->data_nasc = Post::get('data_nasc');
         $user->email = Post::get('email');
         $second_password = Post::get('secondPassword');
 
+        // buscar utilizadores da DB
+        $userDb = User::all();
 
+        // validar se o utilador ja existe
+        foreach($userDb as $value){
+            if($value->username == $user->username || $value->email == $user->email){
+                $user = new User();
+                Redirect::flashToRoute('home/register', ['user' => $user]);
+            }
+        }
+
+        // validações de formulario
         if($second_password != $user->password){
+            $user = new User();
             Redirect::flashToRoute('home/register', ['user' => $user]);
-        }else
-            if($user->is_valid()){
+        } else if($user->is_valid()){
                 $user->save();
                 Redirect::toRoute('home/index');
+                return;
             } else {
-
                 // return form with data and errors
-
+                $user = new User();
+                Redirect::flashToRoute('home/register', ['user' => $user]);
             }
     }
 
@@ -46,14 +61,18 @@ class UserController extends BaseController implements ResourceControllerInterfa
     {
         $us = Post::get("username");
         $pw = Post::get("password");
-
         $user = User::all();
+
+
         foreach ($user as $value){
-            if($value->username == $us && $value->password == $pw ){
+            if(strtoupper($value->username) == strtoupper($us) && $value->password == $pw && $value->permissao!=0 ){
                 Session::set("user", $value);
                 Redirect::toRoute('home/index');
+                return;
             }
         }
+        $user = new User();
+        Redirect::flashToRoute('home/login', ['user' => $user]);
 
     }
 
