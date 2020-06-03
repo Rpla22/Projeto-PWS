@@ -21,7 +21,7 @@ class User extends \ActiveRecord\Model
     );
 
 
-    public function rules()
+    /*public function rules()
     {
         return [
             'primeiro' => 'required',
@@ -32,7 +32,7 @@ class User extends \ActiveRecord\Model
             'email' => 'required|email',
 
         ];
-    }
+    }*/
 
 
 }

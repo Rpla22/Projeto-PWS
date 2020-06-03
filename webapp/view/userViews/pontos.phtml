@@ -1,0 +1,20 @@
+<?php
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+use Armoredcore\WebObjects\Session;
+use ArmoredCore\WebObjects\Data;
+
+$error = Data::get('error');
+Layout::includeLayout('header') ?>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 side-bar-ingame">
+            <div class="row text-center nav-side-bar-ingame" >
+                <?=Layout::includeLayout('sideBarPerfil') ?>
+            </div>
+        </div>
+        <div class="col-md-9">
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+<?php
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+use Armoredcore\WebObjects\Session;
+use ArmoredCore\WebObjects\Data;
+
+$error = Data::get('error');
+$data = data::get('data');
+Layout::includeLayout('header') ?>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 side-bar-ingame">
+            <div class="row text-center nav-side-bar-ingame" >
+                <?=Layout::includeLayout('sideBarPerfil') ?>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="row" style="width: 100%;display: flex;justify-content: center;align-content: center;padding-top: 8vh;font-size: 20px;">
+                <div class="col-md-10" >
+                    <h2>Funcionalidade de Administração</h2>
+                    <div class="form-group" >
+                        <?php if($error!=null){
+                            echo $error;
+                        } ?>
+                    </div>
+                    <div class="overflow-auto" style="margin-top: 5vh;height: 70vh;overflow-x: hidden;overflow-y: scroll;">
+
+                        <table class="table">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Opções</th>
+                                <th scope="col"></th>
+                            </tr>
+                            <?php
+                            foreach ($data as $user){
+                                echo '
+                                <tr>
+                                <th scope="col">'.$user->id.'</th>
+                                <td scope="col">'.$user->primeiro.'</td>
+                                <td scope="col">'.$user->username.'</td>
+                                <td scope="col">'.$user->email.'</td>
+                                <td scope="col">
+                                ';
+                                if( $user->permissao != 0 ){
+                                    echo '<form method="post" action="'. Url::toRoute('user/destroy/' , $user->id) .'">
+                                        <button type="submit" class="btn btn-danger">Bloquear</button>                      
+                                    </form>';
+
+                                }else{
+                                    echo '<form method="post" action="'. Url::toRoute('user/destroy/' , $user->id) .'">
+                                        <button type="submit" class="btn btn-success">Activar</button>                      
+                                    </form>';
+                                }
+
+                                echo '    
+                                </td>
+                                <td scope="col">
+                                ';
+                                if( $user->permissao != 2 ){
+                                    echo '<form method="post" action="'. Url::toRoute('user/promote/' ) .'">
+                                        <button type="submit" class="btn ">Promover</button>                      
+                                    </form>';
+
+                                }else{
+                                    echo '<form method="post" action="'. Url::toRoute('user/promote/', $user->id ) .'">
+                                        <button type="submit" class="btn ">Despromover</button>                      
+                                    </form>';
+                                }
+                                echo '
+                                </td>
+                                </tr>
+                                ';
+                            }
+                            ?>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

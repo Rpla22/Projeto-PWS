@@ -7,6 +7,7 @@ use ArmoredCore\WebObjects\View;
 class Leaderboard extends BaseController
 {
     public function index(){
+        Session::remove("jogoPlayer");
         return View::make('home.leaderboard');
     }
 
