@@ -1,0 +1,20 @@
+<?php use ArmoredCore\WebObjects\URL;
+use Armoredcore\WebObjects\Session;
+?>
+<ul class="nav flex-column">
+    <li class="nav-item">
+        <a class="nav-link active" href="<?=URL::toRoute('user/pontos')?>">Pontuação Pessoal</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="<?=URL::toRoute('user/perfil')?>">Configurações</a>
+    </li>
+    <li class="nav-item">
+        <?php if(Session::has("user") && Session::get("user")->permissao == 2){
+            echo '<a class="nav-link active" href="'. URL::toRoute('user/admin') .'">Administração</a>';
+        }
+        ?>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="<?= URL::toRoute('home/index')?>">Voltar</a>
+    </li>
+</ul>

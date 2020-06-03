@@ -69,37 +69,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Html5" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>ROUTER ERROR: URL Route mismatch.</find>
-      <find>render</find>
-      <find>HQHigh</find>
-      <find>3.</find>
-      <find>start</find>
-      <find>home@</find>
-      <find>toroute</find>
-      <find>die</find>
-      <find>torou</find>
-      <find>chart</find>
-      <find>Profiler In</find>
-      <find>conne</find>
-      <find>define</find>
-      <find>$appDir</find>
-      <find>requ</find>
-      <find>bg_h</find>
-      <find>op</find>
-      <find>routingRule</find>
-      <find>webl</find>
-      <find>PDO</find>
-      <find>img</find>
-      <find>echo</find>
-      <find>Debugger::barDump</find>
-    </findStrings>
   </component>
   <component name="PhpServers">
     <servers />
@@ -171,7 +144,7 @@
     <property name="SearchEverywhereHistoryKey" value="Debugger::barDump&#9;null&#9;null&#10;code sty&#9;ACTION&#9;ChangeCodeStyleScheme&#10;Session::start&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/webapp/view/userViews" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="php.override.implement.member.chooser.php.doc" value="DEFAULT" />
     <property name="recentsLimit" value="5" />
@@ -180,18 +153,18 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\ShutTheBox\webapp\view\jogo" />
       <recent name="C:\wamp64\www\ShutTheBox\webapp\view\home" />
+      <recent name="C:\wamp64\www\ShutTheBox\webapp\view\game" />
       <recent name="C:\wamp64\www\ShutTheBox\webapp\view\layout" />
       <recent name="E:\wamp64\wamp64\www\weblogicmvc\framework\ArmoredCore\WebObjects" />
-      <recent name="E:\wamp64\wamp64\www\weblogicmvc\public\html" />
-      <recent name="E:\wamp64\www\weblogicmvc\wlstudio\startup" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\ShutTheBox\webapp\view\userViews" />
       <recent name="E:\wamp64\www\weblogicmvc\vendor\Pd\Diagnostics" />
       <recent name="E:\wamp64\www\weblogicmvc\webapp\startup" />
       <recent name="E:\wamp64\www\weblogicmvc\webapp\view\layout" />
       <recent name="E:\wamp64\www\weblogicmvc\framework\armoredcore" />
-      <recent name="E:\wamp64\www\weblogicmvc\framework" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.weblogicmvc">
@@ -256,7 +229,18 @@
       <workItem from="1588526570460" duration="10291000" />
       <workItem from="1588701566585" duration="313000" />
       <workItem from="1588701911819" duration="7440000" />
-      <workItem from="1588797052056" duration="4265000" />
+      <workItem from="1588797052056" duration="4939000" />
+      <workItem from="1589405097028" duration="1629000" />
+      <workItem from="1590005672366" duration="7858000" />
+      <workItem from="1590428776929" duration="11437000" />
+      <workItem from="1590518059138" duration="7554000" />
+      <workItem from="1590603726437" duration="16104000" />
+      <workItem from="1591031697543" duration="17442000" />
+      <workItem from="1591128001220" duration="8708000" />
+      <workItem from="1591217159897" duration="8384000" />
+      <workItem from="1591293753543" duration="3913000" />
+      <workItem from="1591726639489" duration="9878000" />
+      <workItem from="1591746157679" duration="729000" />
     </task>
     <servers />
   </component>
@@ -281,16 +265,20 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="1254" y="310" key="NewPhpClassDialog" timestamp="1588528321107">
+    <state x="0" y="0" width="1920" height="1006" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1591294319301">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="0" width="1920" height="1006" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591294319301" />
+    <state x="1254" y="310" key="NewPhpClassDialog" timestamp="1591224364405">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="2620" y="6" key="NewPhpClassDialog/0.0.1366.728/1366.-304.1920.1040@1366.-304.1920.1040" timestamp="1587139560738" />
-    <state x="1254" y="310" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588528321107" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1588272049585">
+    <state x="1254" y="310" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591224364405" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1590522626428">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="2160" y="139" key="NewPhpFileDialog/0.0.1366.728/1366.-304.1920.1040@1366.-304.1920.1040" timestamp="1587139922121" />
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588272049585" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1590522626428" />
     <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.357.1280.680@0.0.1920.1040" timestamp="1587153147824" />
     <state x="2022" y="40" key="com.intellij.ide.util.TipDialog" timestamp="1587135476830">
       <screen x="1366" y="-304" width="1920" height="1040" />
@@ -300,10 +288,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="600" height="428" key="javadoc.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588337933600" />
-    <state x="1982" y="88" key="run.anything.popup" timestamp="1587124194127">
-      <screen x="1366" y="-304" width="1920" height="1040" />
+    <state x="616" y="392" key="run.anything.popup" timestamp="1591741084045">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1982" y="88" key="run.anything.popup/0.0.1366.728/1366.-304.1920.1040@1366.-304.1920.1040" timestamp="1587124194127" />
+    <state x="616" y="392" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591741084045" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1588338441619">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

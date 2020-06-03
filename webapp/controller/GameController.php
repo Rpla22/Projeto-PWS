@@ -4,13 +4,13 @@ use ArmoredCore\WebObjects\Redirect;
 use ArmoredCore\WebObjects\Session;
 use ArmoredCore\WebObjects\View;
 
-class NormalGame extends BaseController
+class GameController extends BaseController
 {
     public function index(){
         if(!Session::has("jogo")){
             $jogo = new Jogo();
             Session::set("jogo", $jogo);
-            $msg = "Clique em Novo Jogo para Começar";
+            $msg = "Clique nos Botões para jogar";
             $pontos = session::get("jogo")->numeroBloqueadosP1->pontos;
             $vencedor = "3";
             return View::make('jogo.index', ['msg' => $msg, 'pontos'=>$pontos, 'vencedor' => $vencedor]);
@@ -29,9 +29,9 @@ class NormalGame extends BaseController
             $msg= 'Computador fez '. session::get("jogo")->numeroBloqueadosP2->pontos;
             $pontos = session::get("jogo")->numeroBloqueadosP1->pontos;
             $vencedor = session::get("jogo")->CalcularVencedor(session::get("jogo")->numeroBloqueadosP1->pontos, session::get("jogo")->numeroBloqueadosP2->pontos);
-
-            $this->guardarJogo();
-
+            if( $vencedor ==1){
+                $this->guardarJogo();
+            }
             return View::make('jogo.index', ['msg' => $msg, 'pontos'=>$pontos, 'vencedor' => $vencedor]);
         }
 
@@ -88,34 +88,35 @@ class NormalGame extends BaseController
 
     }
 
-    public function computerPlay(){
-
-            $validacao = 0;
-            $numeros = session::get("jogo")->numeroBloqueadosP2->num;
-            $sumDados = session::get("jogo")->rdado1 + session::get("jogo")->rdado2;
-            if ($validacao == 0) {
-                for ($i = 1; $i <= 9; $i++) {
-                    if ($sumDados == $numeros[$i - 1] && $numeros[$i - 1] != 0) {
-                        session::get("jogo")->numeroBloqueadosP2->num[$i - 1] = 0;
-                        $validacao = 1;
-                    }
+    public function computerPlay()
+    {
+        do{
+        $validacao = 0;
+        $numeros = session::get("jogo")->numeroBloqueadosP2->num;
+        $sumDados = session::get("jogo")->rdado1 + session::get("jogo")->rdado2;
+        if ($validacao == 0) {
+            for ($i = 1; $i <= 9; $i++) {
+                if ($sumDados == $numeros[$i - 1] && $numeros[$i - 1] != 0) {
+                    session::get("jogo")->numeroBloqueadosP2->num[$i - 1] = 0;
+                    $validacao = 1;
                 }
             }
-            if ($validacao == 0) {
-                for ($i = 1; $i <= 9; $i++) {
-                    if ($validacao = 1) {
+        }
+        if ($validacao == 0) {
+            for ($i = 1; $i <= 9; $i++) {
+                if ($validacao = 1) {
+                    break;
+                }
+                for ($j = 1; $j <= 9; $j++) {
+                    if ($sumDados == $numeros[$i - 1] + $numeros[$j - 1] && $numeros[$i - 1] != 0 && $numeros[$j - 1] != 0 && $numeros[$i - 1] != $numeros[$j - 1]) {
+                        session::get("jogo")->numeroBloqueadosP2->num[$i - 1] = 0;
+                        session::get("jogo")->numeroBloqueadosP2->num[$j - 1] = 0;
+                        $validacao = 1;
                         break;
                     }
-                    for ($j = 1; $j <= 9; $j++) {
-                        if ($sumDados == $numeros[$i - 1] + $numeros[$j - 1] && $numeros[$i - 1] != 0 && $numeros[$j - 1] != 0 && $numeros[$i - 1] != $numeros[$j - 1]) {
-                            session::get("jogo")->numeroBloqueadosP2->num[$i - 1] = 0;
-                            session::get("jogo")->numeroBloqueadosP2->num[$j - 1] = 0;
-                            $validacao = 1;
-                            break;
-                        }
-                    }
                 }
             }
+        }
 
         if ($validacao == 0) {
             for ($i = 1; $i <= 9; $i++) {
@@ -127,7 +128,7 @@ class NormalGame extends BaseController
                         break;
                     }
                     for ($j = 1; $j <= 9; $j++) {
-                        if ($sumDados == $numeros[$i - 1] + $numeros[$j - 1] + $numeros[$x - 1]&& $numeros[$x - 1] != 0&& $numeros[$i - 1] != 0 && $numeros[$j - 1] != 0 && $numeros[$i - 1] != $numeros[$j - 1] && $numeros[$i - 1] != $numeros[$x - 1] && $numeros[$x - 1] != $numeros[$j - 1] ) {
+                        if ($sumDados == $numeros[$i - 1] + $numeros[$j - 1] + $numeros[$x - 1] && $numeros[$x - 1] != 0 && $numeros[$i - 1] != 0 && $numeros[$j - 1] != 0 && $numeros[$i - 1] != $numeros[$j - 1] && $numeros[$i - 1] != $numeros[$x - 1] && $numeros[$x - 1] != $numeros[$j - 1]) {
                             session::get("jogo")->numeroBloqueadosP2->num[$i - 1] = 0;
                             session::get("jogo")->numeroBloqueadosP2->num[$j - 1] = 0;
                             session::get("jogo")->numeroBloqueadosP2->num[$x - 1] = 0;
@@ -138,13 +139,13 @@ class NormalGame extends BaseController
                 }
             }
         }
+        if(session::get("jogo")->checkJogadaFinal(session::get("jogo")->numeroBloqueadosP2->num,$sumDados) == false){
             session::get("jogo")->getDados();
-
-        if(session::get("jogo")->checkJogadaFinal(session::get("jogo")->numeroBloqueadosP2->num,$sumDados)){
+        }
+    }while(session::get("jogo")->checkJogadaFinal(session::get("jogo")->numeroBloqueadosP2->num,$sumDados) == false );
             session::get("jogo")->player = 3;
             return Redirect::toRoute(  'jogo/index');
-        }
-        return Redirect::toRoute(  'jogo/index');
+
     }
 
     public function guardarJogo(){

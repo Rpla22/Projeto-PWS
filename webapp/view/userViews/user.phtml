@@ -1,0 +1,106 @@
+<?php
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+use Armoredcore\WebObjects\Session;
+use ArmoredCore\WebObjects\Data;
+
+$error = Data::get('error');
+Layout::includeLayout('header') ?>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 side-bar-ingame">
+            <div class="row text-center nav-side-bar-ingame" >
+                <?=Layout::includeLayout('sideBarPerfil') ?>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="row" style="width: 100%;display: flex;justify-content: center;align-content: center;padding-top: 8vh;font-size: 20px;">
+
+                <div class="col-md-8" >
+                    <h2>Configurações da Conta</h2>
+                    <div class="row" style="margin-top: 5vh;">
+                    <form method="post" action="<?=Url::toRoute('user/atualizar')?>">
+                        <?php if($error!=null){
+                            echo '<div class="form-group row"><label for="staticEmail" class="col-sm-4 col-form-label">Info Pessoal</label>';
+                            echo '<div class="col-sm-8"><label for="staticEmail" class="col-sm-8 col-form-label" style="color:red">'. $error .'</label></div></div>';
+                        }else{
+                            echo '<div class="form-group row"><label for="staticEmail" class="col-sm-4 col-form-label">Info Pessoal</label></div>';
+                        } ?>
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" name="email" id="staticEmail" value="<?=Session::get("user")->email  ?>">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputUsername" class="col-sm-4 col-form-label">Username</label>
+                            <div class="col-sm-8">
+                                <input type="text" disabled class="form-control" name="username" id="username" value="<?=Session::get("user")->username?>">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputUsername" class="col-sm-4 col-form-label">Password Atual</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" name="password"  required>
+                            </div>
+                        </div>
+                        <div class="form-group row" style="font-size: 12px">
+                            <label for="inputUsername" class="col-sm-4 col-form-label"></label>
+                            <div class="col-sm-8">
+                                *necessária para fazer alterações das informações
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputUsername" class="col-sm-4 col-form-label">Alterar a Password</label>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputUsername" class="col-sm-4 col-form-label">Nova Password</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" name="nPassword"  >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputUsername" class="col-sm-4 col-form-label">Confirmar Password</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" name="cPassword" >
+                            </div>
+                        </div>
+
+                        <div class="form-group row" style="font-size: 12px">
+                            <label for="inputUsername" class="col-sm-4 col-form-label"></label>
+                            <div class="col-sm-8">
+                                *as duas passswords devem corresponder
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputNome" class="col-sm-4 col-form-label">Nome</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="nome" id="nome" value="<?=Session::get("user")->primeiro  ?>">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputApelido" class="col-sm-4 col-form-label">Apelido</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="apelido" id="apelido" value="<?=Session::get("user")->apelido  ?>">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputDataNascimento" class="col-sm-4 col-form-label">Data de Nascimento</label>
+                            <div class="col-sm-8">
+                                <input type="date" class="form-control" name="data_nasc" id="data_nasc" value="<?= Session::get("user")->data_nasc?>">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn">Atualizar</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+</script>
+
+</body>
+</html>
