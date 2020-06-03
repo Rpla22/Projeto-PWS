@@ -14,7 +14,8 @@ class UserController extends BaseController implements ResourceControllerInterfa
     }
 
     public function create(){
-        return View::make('home.register');
+        $error ="";
+        return View::make('home.register',['error' => $error]);
     }
 
     public function store()
@@ -34,26 +35,35 @@ class UserController extends BaseController implements ResourceControllerInterfa
         // buscar utilizadores da DB
         $userDb = User::all();
 
+
         // validar se o utilador ja existe
         foreach($userDb as $value){
             if($value->username == $user->username || $value->email == $user->email){
-                $user = new User();
-                Redirect::flashToRoute('home/register', ['user' => $user]);
+                $error = 'Utilizador ou email ja existente';
+                return View::make('home.register', ['error' => $error]);;
             }
         }
 
         // validações de formulario
         if($second_password != $user->password){
-            $user = new User();
-            Redirect::flashToRoute('home/register', ['user' => $user]);
-        } else if($user->is_valid()){
+            $error = 'Password nao coincide';
+            return View::make('home.register', ['error' => $error]);;
+        }
+
+        if ($user->data_nasc > date("d:m:y")){
+            $error = 'Data nascimento errada';
+            return View::make('home.register', ['error' =>$error]);;
+        }
+
+
+        if($user->is_valid()){
                 $user->save();
-                Redirect::toRoute('home/index');
-                return;
+                return Redirect::toRoute('home/index');;
             } else {
                 // return form with data and errors
-                $user = new User();
-                Redirect::flashToRoute('home/register', ['user' => $user]);
+            $error='Algo deu errado';
+
+                return View::make('home.register', ['error' => $error]);;
             }
     }
 
@@ -63,7 +73,6 @@ class UserController extends BaseController implements ResourceControllerInterfa
         $pw = Post::get("password");
         $user = User::all();
 
-
         foreach ($user as $value){
             if(strtoupper($value->username) == strtoupper($us) && $value->password == $pw && $value->permissao!=0 ){
                 Session::set("user", $value);
@@ -71,6 +80,7 @@ class UserController extends BaseController implements ResourceControllerInterfa
                 return;
             }
         }
+
         $user = new User();
         Redirect::flashToRoute('home/login', ['user' => $user]);
 
@@ -78,6 +88,13 @@ class UserController extends BaseController implements ResourceControllerInterfa
 
     public function show($id)
     {
+
+
+    }
+
+    public function perfil(){
+        $error="";
+        return view::make('userViews.user',['error' => $error] );
 
     }
 
@@ -92,16 +109,93 @@ class UserController extends BaseController implements ResourceControllerInterfa
      */
     public function update($id)
     {
-
     }
 
+    public function atualizar()
+    {
+        $user = User::find (session::get("user")->id);
+        $user->primeiro= Post::get('nome');
+        $user->apelido= Post::get('apelido');
+        $user->username = Post::get('username');
+        $user->data_nasc = Post::get('data_nasc');
+        $user->email = Post::get('email');
+
+        // buscar utilizadores da DB
+        $userDb = User::all();
+
+        $password = Post::get('password');
+        $npassword = Post::get('nPassword');
+        $cpassword = Post::get('cPassword');
+        if($password != session::get("user")->password){
+            $error="Password Incorreta";
+            return view::make('userViews.user',['error' => $error] );
+        }
+
+        if($npassword != $cpassword){
+            $error="Password Nova Incorreta";
+            return view::make('userViews.user',['error' => $error] );
+        }
+
+        // validar se o utilador ja existe
+        foreach($userDb as $value){
+            if($value->username == $user->username && $user->username!= session::get("user")->username){
+                $error = 'Utilizador ou email ja existente';
+                return View::make('home.register', ['error' => $error]);
+            }
+        }
+
+
+        if($user->is_valid()) {
+            $user->save();
+            Session::set("user", $user);
+            return Redirect::toRoute('home/index');
+        }
+    }
+
+    public function pontos(){
+        return View::make('userViews.pontos');;
+    }
+
+    public function admin(){
+        $userDb = User::all();
+        $error = "";
+        return View::make('userViews.admin', ['data' => $userDb, 'error' => $error]);
+    }
     /**
      * @param $id
      * @return mixed
      */
     public function destroy($id)
     {
+        $allUser = User::all();
+        $userDb = User::find($id);
 
+        if($userDb->id ==  session::get("user")->id){
+            $error = "Não é possivel bloquear a sua conta";
+            return View::make('userViews.admin', ['data' => $allUser, 'error' => $error]);
+        }
+
+        if($userDb->permissao == 2){
+            $error = "O utilizador que pretende bloquer é um administrador";
+            return View::make('userViews.admin', ['data' => $allUser, 'error' => $error]);
+        }
+
+        if($userDb->permissao != 0 ){
+            $userDb->permissao = 0;
+            if($userDb->is_valid()) {
+                $userDb->save();
+                $error = "";
+                return Redirect::FlashtoRoute('user/admin', ['data' => $allUser, 'error' => $error]);
+            }
+        }else{
+            $userDb->permissao = 1;
+            if($userDb->is_valid()) {
+                $userDb->save();
+                $error = "";
+                return Redirect::FlashtoRoute('user/admin', ['data' => $allUser, 'error' => $error]);
+
+            }
+        }
     }
 
     public function logout(){
