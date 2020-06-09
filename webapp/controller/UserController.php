@@ -50,11 +50,6 @@ class UserController extends BaseController implements ResourceControllerInterfa
             return View::make('home.register', ['error' => $error]);;
         }
 
-        if ($user->data_nasc > date("d:m:y")){
-            $error = 'Data nascimento errada';
-            return View::make('home.register', ['error' =>$error]);;
-        }
-
 
         if($user->is_valid()){
                 $user->save();
@@ -116,7 +111,6 @@ class UserController extends BaseController implements ResourceControllerInterfa
         $user = User::find (session::get("user")->id);
         $user->primeiro= Post::get('nome');
         $user->apelido= Post::get('apelido');
-        $user->username = Post::get('username');
         $user->data_nasc = Post::get('data_nasc');
         $user->email = Post::get('email');
 
@@ -135,15 +129,7 @@ class UserController extends BaseController implements ResourceControllerInterfa
             $error="Password Nova Incorreta";
             return view::make('userViews.user',['error' => $error] );
         }
-
-        // validar se o utilador ja existe
-        foreach($userDb as $value){
-            if($value->username == $user->username && $user->username!= session::get("user")->username){
-                $error = 'Utilizador ou email ja existente';
-                return View::make('home.register', ['error' => $error]);
-            }
-        }
-
+        $user->password= $npassword;
 
         if($user->is_valid()) {
             $user->save();

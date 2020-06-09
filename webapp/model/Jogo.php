@@ -52,6 +52,18 @@ class Jogo
                 }
             }
 
+            for ($i= 1 ; $i<=9 ; $i++){
+                for ($x= 1 ; $x<=9 ; $x++){
+                    for ($j= 1 ; $j<=9 ; $j++) {
+                        $soma = $numeros[$i-1] + $numeros[$j-1] + $numeros[$x-1];
+                        if ($soma == $sumDados && $numeros[$i-1]!=0 && $numeros[$j-1]!=0 && $numeros[$x-1]!=0 && $numeros[$i-1]!=$numeros[$j-1] && $numeros[$x-1]!=$numeros[$j-1] && $numeros[$i-1]!=$numeros[$x-1] ){
+                            return false;
+                        }
+                    }
+                }
+
+            }
+
             return true;
         }
         return $val;

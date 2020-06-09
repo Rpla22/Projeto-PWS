@@ -32,10 +32,10 @@ Router::get('user/admin',	'UserController/admin');
 Router::post('user/atualizar',	'UserController/atualizar');
 
 
-Router::get('jogo/index',	'NormalGame/index');
-Router::post('jogo/bloquear',	'NormalGame/bloquear');
-Router::get('jogo/novoJogo',	'NormalGame/novoJogo');
-Router::get('jogo/rodarDados',	'NormalGame/rodarDados');
+Router::get('jogo/index',	'GameController/index');
+Router::post('jogo/bloquear',	'GameController/bloquear');
+Router::get('jogo/novoJogo',	'GameController/novoJogo');
+Router::get('jogo/rodarDados',	'GameController/rodarDados');
 
 Router::resource('user', 'UserController');
 

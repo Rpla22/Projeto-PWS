@@ -238,6 +238,9 @@
       <workItem from="1591031697543" duration="17442000" />
       <workItem from="1591128001220" duration="8708000" />
       <workItem from="1591217159897" duration="8384000" />
+      <workItem from="1591293753543" duration="3913000" />
+      <workItem from="1591726639489" duration="9878000" />
+      <workItem from="1591746157679" duration="729000" />
     </task>
     <servers />
   </component>
@@ -262,10 +265,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="808" y="327" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590614870482">
+    <state x="0" y="0" width="1920" height="1006" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1591294319301">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="808" y="327" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1590614870482" />
+    <state x="0" y="0" width="1920" height="1006" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591294319301" />
     <state x="1254" y="310" key="NewPhpClassDialog" timestamp="1591224364405">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -285,11 +288,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="600" height="428" key="javadoc.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588337933600" />
-    <state x="616" y="392" key="run.anything.popup" timestamp="1590434206338">
+    <state x="616" y="392" key="run.anything.popup" timestamp="1591741084045">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1982" y="88" key="run.anything.popup/0.0.1366.728/1366.-304.1920.1040@1366.-304.1920.1040" timestamp="1587124194127" />
-    <state x="616" y="392" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1590434206338" />
+    <state x="616" y="392" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591741084045" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1588338441619">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
