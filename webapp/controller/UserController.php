@@ -125,15 +125,12 @@ class UserController extends BaseController implements ResourceControllerInterfa
             return view::make('userViews.user',['error' => $error] );
         }
 
-<<<<<<< Updated upstream
         if($npassword != $cpassword){
             $error="Password Nova Incorreta";
             return view::make('userViews.user',['error' => $error] );
         }
         $user->password= $npassword;
 
-=======
->>>>>>> Stashed changes
         if($user->is_valid()) {
             $user->save();
             Session::set("user", $user);
