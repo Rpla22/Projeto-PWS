@@ -125,12 +125,15 @@ class UserController extends BaseController implements ResourceControllerInterfa
             return view::make('userViews.user',['error' => $error] );
         }
 
+<<<<<<< Updated upstream
         if($npassword != $cpassword){
             $error="Password Nova Incorreta";
             return view::make('userViews.user',['error' => $error] );
         }
         $user->password= $npassword;
 
+=======
+>>>>>>> Stashed changes
         if($user->is_valid()) {
             $user->save();
             Session::set("user", $user);
@@ -139,7 +142,13 @@ class UserController extends BaseController implements ResourceControllerInterfa
     }
 
     public function pontos(){
-        return View::make('userViews.pontos');;
+        $data = Game::find('all', array('conditions' => array('users_id = ?', session::get("user")->id)));
+        $pontos= 0;
+        foreach ($data as $jogos){
+            $pontos += $jogos->pontos;
+        }
+
+        return View::make('userViews.pontos', ['data'=> $data, 'pontos'=>$pontos]);;
     }
 
     public function admin(){
@@ -187,6 +196,41 @@ class UserController extends BaseController implements ResourceControllerInterfa
     public function logout(){
         Session::destroy();
         Redirect::toRoute('home/index');
+    }
+
+
+    public function promover($id)
+    {
+        $allUsers = User::all();
+        $userDb = User::find($id);
+
+        if($userDb->id ==  session::get("user")->id){
+            $error = "Não é possivel despromover-se";
+            return View::make('userViews.admin', ['data' => $allUsers, 'error' => $error]);
+        }
+
+        if($userDb->permissao ==  0){
+            $error = "Não é possivel promover um user bloqueado";
+            return View::make('userViews.admin', ['data' => $allUsers, 'error' => $error]);
+        }
+
+
+        if($userDb->permissao != 2 ){
+            $userDb->permissao = 2;
+            if($userDb->is_valid()) {
+                $userDb->save();
+                $error = "";
+                return Redirect::FlashtoRoute('user/admin', ['data' => $allUsers, 'error' => $error]);
+            }
+        }else{
+            $userDb->permissao = 1;
+            if($userDb->is_valid()) {
+                $userDb->save();
+                $error = "";
+                return Redirect::FlashtoRoute('user/admin', ['data' => $allUsers, 'error' => $error]);
+
+            }
+        }
     }
 
 }
