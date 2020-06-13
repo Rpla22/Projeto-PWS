@@ -60,12 +60,12 @@ Layout::includeLayout('header') ?>
                                 <td scope="col">
                                 ';
                                 if( $user->permissao != 2 ){
-                                    echo '<form method="post" action="'. Url::toRoute('user/promote/' ) .'">
+                                    echo '<form method="post" action="'. Url::toRoute('user/promover/', $user->id ) .'">
                                         <button type="submit" class="btn ">Promover</button>                      
                                     </form>';
 
                                 }else{
-                                    echo '<form method="post" action="'. Url::toRoute('user/promote/', $user->id ) .'">
+                                    echo '<form method="post" action="'. Url::toRoute('user/promover/', $user->id ) .'">
                                         <button type="submit" class="btn ">Despromover</button>                      
                                     </form>';
                                 }

@@ -18,6 +18,10 @@ class HomeController extends BaseController
         return View::make('home.index');
     }
 
+    public function sobre(){
+
+        return View::make('home.sobre');
+    }
 
     public function start(){
 

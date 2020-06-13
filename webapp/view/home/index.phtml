@@ -62,6 +62,13 @@ use ArmoredCore\WebObjects\ErrMgr;
                     </li>
                     <li class="nav-item">
                         <?php if(Session::has("user")){
+                            echo '<a class="nav-link active" href="'. URL::toRoute('home/sobre') .'">Tutorial</a>';
+                        }
+                        ?>
+
+                    </li>
+                    <li class="nav-item">
+                        <?php if(Session::has("user")){
                             echo '<a class="nav-link active" href="'. URL::toRoute('jogo/index') .'">Jogo Normal</a>';
                         }else{
                             echo '<a class="nav-link active" href="'. URL::toRoute('home/register') . '">Registar</a>';
