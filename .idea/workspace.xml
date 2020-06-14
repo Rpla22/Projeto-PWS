@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7001a1a5-552a-4369-8b2d-3d517ff80e18" name="Default" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="webapp@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="webapp@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="webapp" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="f1cars" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="webapp@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="webapp" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Html5" />
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpTemplates">
+    <option name="NEW_PHP_FILE_LAST_EXTENSION" value="phtml" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-diactoros" />
+      <path value="$PROJECT_DIR$/vendor/Hoa/Protocol" />
+      <path value="$PROJECT_DIR$/vendor/Hoa/Consistency" />
+      <path value="$PROJECT_DIR$/vendor/Hoa/Event" />
+      <path value="$PROJECT_DIR$/vendor/Hoa/Exception" />
+      <path value="$PROJECT_DIR$/vendor/Hoa/Websocket" />
+      <path value="$PROJECT_DIR$/vendor/Hoa/Socket" />
+      <path value="$PROJECT_DIR$/vendor/Aura/Filter" />
+      <path value="$PROJECT_DIR$/vendor/Aura/Includer" />
+      <path value="$PROJECT_DIR$/vendor/Aura/Di" />
+      <path value="$PROJECT_DIR$/vendor/Kdyby/Extension" />
+      <path value="$PROJECT_DIR$/vendor/Pd/Diagnostics" />
+      <path value="$PROJECT_DIR$/vendor/Nette/Iterators" />
+      <path value="$PROJECT_DIR$/vendor/Nette/PhpGenerator" />
+      <path value="$PROJECT_DIR$/vendor/Nette/Utils" />
+      <path value="$PROJECT_DIR$/vendor/Netpromotion/Profiler" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/phpFastCache/Exceptions" />
+      <path value="$PROJECT_DIR$/vendor/phpFastCache/Cache" />
+      <path value="$PROJECT_DIR$/vendor/phpFastCache/Entities" />
+      <path value="$PROJECT_DIR$/vendor/phpFastCache/Drivers" />
+      <path value="$PROJECT_DIR$/vendor/phpFastCache/Core" />
+      <path value="$PROJECT_DIR$/vendor/php-activerecord/examples" />
+      <path value="$PROJECT_DIR$/vendor/phpFastCache/Bundle" />
+      <path value="$PROJECT_DIR$/vendor/phpFastCache/Proxy" />
+      <path value="$PROJECT_DIR$/vendor/phpFastCache/Util" />
+      <path value="$PROJECT_DIR$/vendor/php-activerecord/lib" />
+      <path value="$PROJECT_DIR$/vendor/Symfony/Component" />
+      <path value="$PROJECT_DIR$/vendor/php-activerecord/test" />
+      <path value="$PROJECT_DIR$/vendor/Filisko/PDOplus" />
+      <path value="$PROJECT_DIR$/vendor/Dave1010/Hug" />
+      <path value="$PROJECT_DIR$/vendor/Stolz/Assets" />
+      <path value="$PROJECT_DIR$/vendor/PetrKnap/Php" />
+      <path value="$PROJECT_DIR$/vendor/Tracy/Bridges" />
+      <path value="$PROJECT_DIR$/vendor/Tracy/assets" />
+      <path value="$PROJECT_DIR$/vendor/Psr/Hug" />
+      <path value="$PROJECT_DIR$/vendor/Psr/Container" />
+      <path value="$PROJECT_DIR$/vendor/Psr/Cache" />
+      <path value="$PROJECT_DIR$/vendor/Psr/Http" />
+      <path value="$PROJECT_DIR$/vendor/Psr/Log" />
+      <path value="$PROJECT_DIR$/vendor/Psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/Psr/Interop" />
+      <path value="$PROJECT_DIR$/vendor/Windwalker/loader" />
+      <path value="$PROJECT_DIR$/vendor/Windwalker/structure" />
+      <path value="$PROJECT_DIR$/vendor/Windwalker/Cache" />
+      <path value="$PROJECT_DIR$/vendor/Windwalker/http" />
+      <path value="$PROJECT_DIR$/vendor/Windwalker/edge" />
+      <path value="$PROJECT_DIR$/vendor/Windwalker/renderer" />
+      <path value="$PROJECT_DIR$/vendor/Windwalker/uri" />
+      <path value="$PROJECT_DIR$/vendor/legacy/Haanga" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1af3X2eihxCtN3L37pi56Oex6uf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SearchEverywhereHistoryKey" value="Debugger::barDump&#9;null&#9;null&#10;code sty&#9;ACTION&#9;ChangeCodeStyleScheme&#10;Session::start&#9;null&#9;null" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="php.override.implement.member.chooser.php.doc" value="DEFAULT" />
+    <property name="recentsLimit" value="5" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\ShutTheBox\webapp\view\jogo" />
+      <recent name="C:\wamp64\www\ShutTheBox\webapp\view\home" />
+      <recent name="C:\wamp64\www\ShutTheBox\webapp\view\game" />
+      <recent name="C:\wamp64\www\ShutTheBox\webapp\view\layout" />
+      <recent name="E:\wamp64\wamp64\www\weblogicmvc\framework\ArmoredCore\WebObjects" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\ShutTheBox\webapp\view\userViews" />
+      <recent name="E:\wamp64\www\weblogicmvc\vendor\Pd\Diagnostics" />
+      <recent name="E:\wamp64\www\weblogicmvc\webapp\startup" />
+      <recent name="E:\wamp64\www\weblogicmvc\webapp\view\layout" />
+      <recent name="E:\wamp64\www\weblogicmvc\framework\armoredcore" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.weblogicmvc">
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration name="weblogicmvc" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner directory="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="startupconfig.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/webapp/startup/startupconfig.php">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="PHP Script.startupconfig.php" />
+      <item itemvalue="PHPUnit.weblogicmvc" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.startupconfig.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7001a1a5-552a-4369-8b2d-3d517ff80e18" name="Default" comment="" />
+      <created>1462184024711</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1462184024711</updated>
+      <workItem from="1491344815131" duration="229869000" />
+      <workItem from="1492187771034" duration="11222000" />
+      <workItem from="1492254238550" duration="47648000" />
+      <workItem from="1492427300750" duration="52033000" />
+      <workItem from="1492528554961" duration="747000" />
+      <workItem from="1492529340633" duration="373000" />
+      <workItem from="1492530197275" duration="2484000" />
+      <workItem from="1492542296752" duration="17485000" />
+      <workItem from="1492626948768" duration="11495000" />
+      <workItem from="1587112859729" duration="16387000" />
+      <workItem from="1587135456431" duration="3332000" />
+      <workItem from="1587207717331" duration="1228000" />
+      <workItem from="1587315405115" duration="4639000" />
+      <workItem from="1587416201118" duration="4719000" />
+      <workItem from="1587501658909" duration="1499000" />
+      <workItem from="1587586186574" duration="9713000" />
+      <workItem from="1587849231353" duration="619000" />
+      <workItem from="1588271720092" duration="9705000" />
+      <workItem from="1588337765801" duration="2540000" />
+      <workItem from="1588526570460" duration="10291000" />
+      <workItem from="1588701566585" duration="313000" />
+      <workItem from="1588701911819" duration="7440000" />
+      <workItem from="1588797052056" duration="4939000" />
+      <workItem from="1589405097028" duration="1629000" />
+      <workItem from="1590005672366" duration="7858000" />
+      <workItem from="1590428776929" duration="11437000" />
+      <workItem from="1590518059138" duration="7554000" />
+      <workItem from="1590603726437" duration="16104000" />
+      <workItem from="1591031697543" duration="17442000" />
+      <workItem from="1591128001220" duration="8708000" />
+      <workItem from="1591217159897" duration="8384000" />
+      <workItem from="1591293753543" duration="3913000" />
+      <workItem from="1591726639489" duration="9878000" />
+      <workItem from="1591746157679" duration="729000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1591986865666" duration="1191000" />
+      <workItem from="1591988339765" duration="48000" />
+      <workItem from="1592063844320" duration="5135000" />
+>>>>>>> Stashed changes
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="2">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="0" y="0" width="1920" height="1006" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1591294319301">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="0" width="1920" height="1006" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591294319301" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1591988385779">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591988385779" />
+    <state x="1254" y="310" key="NewPhpClassDialog" timestamp="1591224364405">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2620" y="6" key="NewPhpClassDialog/0.0.1366.728/1366.-304.1920.1040@1366.-304.1920.1040" timestamp="1587139560738" />
+    <state x="1254" y="310" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591224364405" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1592066559698">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2160" y="139" key="NewPhpFileDialog/0.0.1366.728/1366.-304.1920.1040@1366.-304.1920.1040" timestamp="1587139922121" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592066559698" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.357.1280.680@0.0.1920.1040" timestamp="1587153147824" />
+    <state x="2022" y="40" key="com.intellij.ide.util.TipDialog" timestamp="1587135476830">
+      <screen x="1366" y="-304" width="1920" height="1040" />
+    </state>
+    <state x="2022" y="40" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.-304.1920.1040@1366.-304.1920.1040" timestamp="1587135476830" />
+    <state width="600" height="428" key="javadoc.popup" timestamp="1588337933600">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="600" height="428" key="javadoc.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588337933600" />
+    <state x="616" y="392" key="run.anything.popup" timestamp="1591741084045">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1982" y="88" key="run.anything.popup/0.0.1366.728/1366.-304.1920.1040@1366.-304.1920.1040" timestamp="1587124194127" />
+    <state x="616" y="392" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591741084045" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1588338441619">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588338441619" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="Copyright.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

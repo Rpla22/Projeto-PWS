@@ -1,0 +1,55 @@
+<?php
+
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+use Armoredcore\WebObjects\Session;
+use ArmoredCore\WebObjects\Data;
+
+$data = data::get('data');
+
+Layout::includeLayout('header') ?>
+<div class="container-fluid">
+    <div class="row">
+
+
+        <div class="col-md-3 side-bar-ingame">
+            <div class="row text-center nav-side-bar-ingame">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= URL::toRoute('home/index') ?>"">Voltar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9 ">
+            <div class="row" style="height: 10vh;margin-top: 10vh;">
+                <div class="col-md-3 ">
+                </div>
+                <div class="col-md-6" style="justify-content: center;align-items: center;text-align: center;">
+                    <h2>Como jogar!</h2>
+                </div>
+                <div class="col-md-3 ">
+                </div>
+            </div>
+            <div class="row" style="height: 20vh;margin-top: 5vh;">
+                <div class="col-md-2 ">
+                </div>
+
+                <div class="col-md-8" style="height:55vh;justify-content: center;align-items: center;text-align: center;overflow-x: hidden;overflow-y: scroll;">
+                    <p style="text-align: justify">
+                        <strong>Passo 1:</strong> Após iniciar o jogo, o jogador deve escolher quais os números que pretende bloquear para igualar a soma do valor dos dados.<br><br>
+                        <strong>Passo 2:</strong> Depois do passo 1, o jogador lança novamente os dados e volta a repetir o passo 1 até que nao haja possiveis combinações.<br><br>
+                        <strong>Passo 3:</strong> Após isso contabiliza-se o valor de números nao utilizados pelo jogador.<br><br>
+                        <strong>Passo 4:</strong> Por último é a vez do jogador (computador) jogar, seguindo os passos anteriores (1 a 3).<br><br>
+                        <strong>Passo 5:</strong> O vencedor é aquele que obtiver um menor valor (total em soma) de números não utilizados.<br><br>
+
+                        Os pontos são atribuidos pela soma dos numeros nao utilizados pelo perdedor menos a soma dos numero nao utilizados do vencedor.
+                    </p>
+                </div>
+                <div class="col-md-2 ">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

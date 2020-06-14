@@ -1,0 +1,34 @@
+.side-bar{
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.nav-side-bar{
+    width: 100%;
+}
+
+.nav-side-bar a{
+    font-size: 25px;
+}
+
+.side-bar-ingame{
+    height: 100vh;
+    background-color: #28aef9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: sidebar-slidein;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+.nav-side-bar-ingame{
+    width: 100%;
+}
+
+.nav-side-bar-ingame a{
+    color: white;
+    font-size: 25px;
+}

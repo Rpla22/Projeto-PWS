@@ -1,0 +1,56 @@
+<?php
+use ArmoredCore\WebObjects\Layout;;
+use ArmoredCore\WebObjects\URL;
+Layout::includeLayout('header') ?>
+<div class="container-fluid">
+<div class="row">
+
+
+
+<div class="col-md-3 side-bar-ingame">
+    <div class="row text-center nav-side-bar-ingame" >
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Novo Jogo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= URL::toRoute('home/index')?>"">Voltar</a>
+            </li>
+        </ul>
+    </div>
+</div>
+    <div class="col-md-9 ">
+        <div class="row" style="height: 100vh;">
+            <div class="row" style="height: 10vh; width: 100%;margin: 0px;"></div>
+            <form action="<?= URL::toRoute('normalgame/index')?>" method="POST">
+            <div class="row text-center" style="border: black 1px solid; height: 20vh; width: 100%;margin: 0px;justify-content: center;align-items: center;display: flex;">
+                    <button name="1" class="col-md-1 number">1</button>
+                    <button name="2" class="col-md-1 number">2</button>
+                    <button name="3" class="col-md-1 number">3</button>
+                    <button name="4" class="col-md-1 number">4</button>
+                    <button name="5" class="col-md-1 number">5</button>
+                    <button name="6" class="col-md-1 number">6</button>
+                    <button name="7" class="col-md-1 number">7</button>
+                    <button name="8" class="col-md-1 number">8</button>
+                    <button name="9" class="col-md-1 number">9</button>
+
+            </div>
+            </form>
+            <div class="row" style="height: 30vh; width: 100%;margin: 0px;"></div>
+            <div class="row text-center" style="border: black 1px solid; height: 20vh; width: 100%;margin: 0px;justify-content: center;align-items: center;display: flex;">
+                <button class="col-md-1 number" disabled>1</button>
+                <button class="col-md-1 number" type="disabled">2</button>
+                <button class="col-md-1 number">3</button>
+                <button class="col-md-1 number">4</button>
+                <button class="col-md-1 number">5</button>
+                <button class="col-md-1 number">6</button>
+                <button class="col-md-1 number">7</button>
+                <button class="col-md-1 number">8</button>
+                <button class="col-md-1 number">9</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+

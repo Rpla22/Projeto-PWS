@@ -1,0 +1,153 @@
+<?php
+use ArmoredCore\WebObjects\Asset;
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\Facades\AssetBundler;
+use ArmoredCore\WebObjects\URL;
+use Armoredcore\WebObjects\Session;
+use ArmoredCore\WebObjects\Data;
+
+$msg = Data::get('msg');
+$pontos = Data::get('pontos');
+$vencedor = Data::get('vencedor');
+Layout::includeLayout('header') ?>
+<div class="container-fluid">
+<div class="row">
+
+
+
+<div class="col-md-3 side-bar-ingame">
+    <div class="row text-center nav-side-bar-ingame" >
+        <div class="row">
+            <h3 style="color: white;">
+                <?php if($pontos!=null) {
+                    echo session::get("user")->username . ' fez '. $pontos.' pontos';;
+                } ?>
+
+            </h3>
+            <h3 style="color: white;">
+                <?php if($msg!=null) {
+                    echo $msg;
+                } ?>
+            </h3>
+
+        </div>
+        <div class="row" style=" margin-top:30vh ">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <?php
+                        switch ($vencedor){
+                            case 0:
+                                echo '<a class="nav-link active">É um empate</a>';
+                                break;
+                            case 1:
+                                echo '<a class="nav-link active"> '.session::get("user")->username . ' ganhou</a>';
+                                break;
+                            case 2:
+                                echo '<a class="nav-link active">O computador ganhou</a>';
+                                break;
+                            case 3:
+                                echo '<a class="nav-link active" href="'. URL::toRoute('jogo/rodarDados') . '">Rodar Dados</a>';
+
+                        }
+
+
+
+                    ?>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="row" style=" margin-top:30vh ">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="<?= URL::toRoute('jogo/novoJogo')?>">Novo Jogo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= URL::toRoute('home/index')?>"">Voltar</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+    <div class="col-md-9 ">
+        <div class="row" style="height: 100vh;">
+            <div class="row" style="height: 8vh; width: 100%;margin: 0px;"></div>
+            <div class="row text-center" style="height: 20vh; width: 100%;">
+                <div class="col-md-1">
+
+                </div>
+                <div class="col-md-10" style="text-align: center">
+                    <div class="row" >
+                        <h2><?php echo strtoupper(session::get("user")->username) ?></h2>
+                    </div>
+                    <div class="row" style="margin-top:3vh">
+                        <?php
+                            $value = session::get("jogo")->numeroBloqueadosP1->num;
+                            if(session::get("jogo")->player == 1)
+                            {
+                                for ( $i = 1 ; $i<= 9 ; $i++){
+                                    if($value[$i-1] ==0){
+                                        echo '<button style="width: 10%" disabled><h1>'.$i . '</h1></button>';
+                                    }else if($value[$i-1] ==10){
+                                        echo '<form style="display: inline-block;width:10%;" method="post" action="'. Url::toRoute('jogo/bloquear/' , $i) .'"><button style="width:100%;border: solid black 2px" ><h1>'.$i . '</h1></button></form>';
+                                    }else {
+                                        echo '<form style="display: inline-block;width:10%;" method="post" action="'. Url::toRoute('jogo/bloquear/' , $i) .'"><button style="width:100%;" type="submit" ><h1>'.$i . '</h1></button></form>';
+                                    }
+                                }
+                            }else{
+                                for ( $i = 1 ; $i<= 9 ; $i++){
+                                    if($value[$i-1] ==0){
+                                        echo '<button style="width: 10%" disabled><h1>'.$i . '</h1></button>';
+                                    }else{
+                                        echo '<button style="width: 10%"><h1>'.$i . '</h1></button>';
+                                    }
+                                }
+                            }
+                        ?>
+                    </div>
+                </div>
+
+                <div class="col-md-1"></div>
+
+            </div>
+            <div class="row" style="height: 30vh; width: 100%;margin: 0px;justify-content: center;align-items: center;display: flex;">
+                <img style="width: 12vh" src="<?= Asset::image(session::get("jogo")->rdado1 . '.png')?>" alt="dado1">
+                <img style="width: 12vh" src="<?= Asset::image(session::get("jogo")->rdado2 . '.png')?>" alt="dado2">
+            </div>
+            <div class="row text-center" style="height: 20vh; width: 100%;">
+                <div class="col-md-1">
+
+                </div>
+                <div class="col-md-10" style="text-align: center">
+                    <div class="row">
+                        <?php
+                        $value = session::get("jogo")->numeroBloqueadosP2->num;
+                        for ( $i = 1 ; $i<= 9 ; $i++){
+                            if($value[$i-1] ==0){
+                                echo '<button style="width: 10%" disabled><h1>'.$i . '</h1></button>';
+                            }else if($value[$i-1] ==10){
+                                echo '<button style="width: 10%"><h1>'.$i . '</h1></button>';
+                            }else {
+                                echo '<button style="width: 10%" type="submit"><h1>'.$i . '</h1></button>';
+                            }
+                        }
+                        ?>
+                    </div>
+                    <div class="row" style="margin-top:3vh">
+                        <h2>COMPUTADOR</h2>
+                    </div>
+
+
+
+                </div>
+                <div class="col-md-1"></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+

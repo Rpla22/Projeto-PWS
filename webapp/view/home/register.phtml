@@ -1,0 +1,69 @@
+<?php
+use ArmoredCore\WebObjects\Data;
+use ArmoredCore\WebObjects\ErrMgr;
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+?>
+<?php $error = Data::get('error'); ?>
+<?php Layout::includeLayout('header') ?>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 side-bar" style="padding-top: 10vh;font-size: 20px;" >
+            <div class="row text-center" style="padding: 4vh;">
+                <form method="post" action="<?=Url::toRoute('user/store')?>">
+                    <div class="form-group">
+                        <div class="form-group" >
+                            <?php if($error!=null){
+                                echo $error;
+                            } ?>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Primeiro Nome</label>
+                        <input type="text"  class="form-control" id="Primeiro"  placeholder="Primeiro" name="primeiro" required>
+                    </div>
+                    <div class="form-group" >
+                        <label for="username">Apelido</label>
+                        <input type="text"  class="form-control" id="Apelido"  placeholder="Apelido" name="apelido" >
+                    </div>
+                    <div class="form-group" >
+                        <label for="username">Username</label>
+                        <input type="text"  class="form-control" id="Username"  placeholder="Username" name="username" required>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="Password">Password</label>
+                        <input type="password"  class="form-control" id="Password" placeholder="Password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="secondPassword">Re-enter Password</label>
+                        <input type="password" class="form-control" id="secondPassword" placeholder="Re-enter Password" name="secondPassword"required>
+                    </div>
+                    <div class="form-group" >
+                        <label for="dataNasc">Data de Nascimento</label>
+                        <input type="date"  class="form-control" id="dataNasc" name="data_nasc" required>
+                    </div>
+                    <div class="form-group" >
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email"  placeholder="Email" name="email" required>
+                    </div>
+                    <button type="submit" class="btn">Registar</button>
+                </form>
+
+                <div class="row" style="padding-top: 5vh;">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= URL::toRoute('home/index')?>"> Voltar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 cube-body">
+            <?php Layout::includeLayout('cube') ?>
+
+        </div>
+    </div>
+</div>
